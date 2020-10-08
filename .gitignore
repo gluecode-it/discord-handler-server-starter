@@ -3,4 +3,4 @@
 /dist
 /.env*
 .google-credentials.json
-/config.yml
+/.config.yml
