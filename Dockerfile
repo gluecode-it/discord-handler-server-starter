@@ -1,4 +1,4 @@
-FROM node:12.18.4-stretch-slim as build
+FROM node:12.19.0-stretch-slim as build
 ARG NPM_TOKEN
 WORKDIR /app
 ADD . /app
@@ -7,7 +7,7 @@ RUN echo "//npm.pkg.github.com/:_authToken=$NPM_TOKEN" >> /app/.npmrc && \
     npx tsc && \
     rm -f /app/.npmrc
 
-FROM node:12.18.4-stretch-slim as app
+FROM node:12.19.0-stretch-slim as app
 ARG NPM_TOKEN
 WORKDIR /app
 ADD . /app
