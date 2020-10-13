@@ -1,5 +1,5 @@
 {
-  "name": "discord-handler-server-starter",
+  "name": "@gluecode-it/discord-handler-server-starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,8 +16,8 @@
     "@types/jest": "^26.0.14",
     "@types/js-yaml": "^3.12.5",
     "husky": "4.3.0",
-    "jest": "26.5.3",
-    "semantic-release": "17.1.2",
+    "jest": "26.4.2",
+    "semantic-release": "17.2.1",
     "typescript": "4.0.3"
   },
   "dependencies": {
@@ -29,7 +29,6 @@
     "ajv": "^6.12.5",
     "discord-webhook-node": "^1.1.8",
     "discord.js": "^12.3.1",
-    "dotenv": "^8.2.0",
     "js-yaml": "^3.14.0",
     "moment": "^2.29.0"
   },
