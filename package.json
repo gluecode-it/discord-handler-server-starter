@@ -1,5 +1,5 @@
 {
-  "name": "discord-handler-server-starter",
+  "name": "@gluecode-it/discord-handler-server-starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -33,8 +33,5 @@
     "moment": "^2.29.0"
   },
   "author": "",
-  "license": "ISC",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  }
+  "license": "ISC"
 }
