@@ -1,7 +1,6 @@
 name: Release as docker image
 on:
   release:
-    types: [created]
 jobs:
   release:
     name: Release
