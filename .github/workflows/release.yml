@@ -1,0 +1,19 @@
+name: Release
+"on":
+  push:
+    branches:
+      - master
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Build and publish to registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: ${{ github.repository }}:${{ github.ref }}
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+          registry: docker.pkg.github.com
