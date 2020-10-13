@@ -22,5 +22,5 @@ jobs:
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/main
           tag_with_ref: true
-          build-args: |
+          build_args: |
             NPM_TOKEN=${{ secrets.NPM_TOKEN }}"
