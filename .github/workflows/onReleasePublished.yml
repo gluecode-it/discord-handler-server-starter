@@ -1,8 +1,7 @@
 name: Release as docker image
-"on":
-  push:
-    branches:
-      - master
+on:
+  release:
+    types: [published]
 jobs:
   release:
     name: Release
@@ -17,9 +16,8 @@ jobs:
         env:
           NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
         with:
-          repository: ${{ github.repository }}/discord-handler-server-starter
+          repository: ${{ github.repository }}/discord-handler-server-starter:${{ env.RELEASE_VERSION }}
           username: ${{ github.actor }}
           password: ${{ github.token }}
           registry: docker.pkg.github.com
           build_args: "NPM_TOKEN=${{ secrets.NPM_TOKEN }}"
-          tag_with_ref: true
