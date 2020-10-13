@@ -1,5 +1,6 @@
 FROM node:12.18.4-stretch-slim as build
 ARG NPM_TOKEN
+ENV NPM_TOKEN=$NPM_TOKEN
 WORKDIR /app
 ADD . /app
 RUN echo "//npm.pkg.github.com/:_authToken=$NPM_TOKEN" >> /app/.npmrc && \
