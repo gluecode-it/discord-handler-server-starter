@@ -1,5 +1,5 @@
 name: Release new version
-"on":
+on:
   push:
     branches:
       - master
