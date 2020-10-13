@@ -1,6 +1,8 @@
 name: Release as docker image
 on:
-  release:
+  push:
+    tags:
+      - "*"
 jobs:
   release:
     name: Release
