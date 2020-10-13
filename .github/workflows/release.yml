@@ -20,4 +20,4 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ github.token }}
           registry: docker.pkg.github.com
-          build_args: NPM_TOKEN=${{ secrets.NPM_TOKEN }}
+          build_args: "NPM_TOKEN=${{ secrets.NPM_TOKEN }}"
