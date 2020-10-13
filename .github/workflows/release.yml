@@ -22,3 +22,4 @@ jobs:
           password: ${{ github.token }}
           registry: docker.pkg.github.com
           build_args: "NPM_TOKEN=${{ secrets.NPM_TOKEN }}"
+          tag_with_ref: true
