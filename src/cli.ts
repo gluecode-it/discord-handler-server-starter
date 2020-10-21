@@ -48,7 +48,7 @@ async function start(configEntry: ConfigEntry) {
 
 (async () => {
   var ajv = new Ajv();
-  const yamlContent = readFileSync(".config.yml").toString();
+  const yamlContent = readFileSync(process.env.CONFIG_PATH || ".config.yml").toString();
   const config = safeLoad(yamlContent) as ConfigRoot;
   var valid = ajv.validate(schema, config);
   if (!valid) {
