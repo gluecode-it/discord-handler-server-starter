@@ -32,6 +32,9 @@
     "js-yaml": "^3.14.0",
     "moment": "^2.29.1"
   },
+	"publishConfig": {
+		"access": "public"
+	},
   "author": "",
   "license": "ISC"
 }
