@@ -23,3 +23,12 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           NPM_TOKEN: '${{ secrets.NPM_TOKEN_NPMJS }}'
+      - name: Set env
+        run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
+      - name: Build and publish to registry
+        uses: docker/build-push-action@v1
+        with:
+          repository: ${{ github.repository }}/discord-handler-server-starter:${{ env.RELEASE_VERSION }}
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+          registry: docker.pkg.github.com
