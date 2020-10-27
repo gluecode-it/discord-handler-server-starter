@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -27,9 +27,11 @@ jobs:
         run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
       - name: Build and publish to registry
         uses: docker/build-push-action@v1
+        env:
+          NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
         with:
+          repository: ${{ github.repository }}/discord-handler-server-starter:${{ env.RELEASE_VERSION }}
           username: ${{ github.actor }}
           password: ${{ github.token }}
           registry: docker.pkg.github.com
-          repository: ${{ github.repository }}/discord-handler-server-starter:${{ env.RELEASE_VERSION }}
-          
+          build_args: "NPM_TOKEN=${{ secrets.NPM_TOKEN }}"
