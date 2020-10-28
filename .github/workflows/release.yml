@@ -30,7 +30,7 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1 
         with:
-          registry: docker.pkg.github.com
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GH_PAT }}
       - name: Build and push
@@ -38,5 +38,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: docker.pkg.github.com/${{ github.repository }}/discord-handler-server-starter:${{ env.RELEASE_VERSION }}
-          #tags: ${{ github.repository }}/discord-handler-server-starter:${{ env.RELEASE_VERSION }}
+          tags: ghcr.io/${{ github.repository }}:${{ env.RELEASE_VERSION }}
